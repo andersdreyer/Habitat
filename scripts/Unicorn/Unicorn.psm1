@@ -91,6 +91,7 @@ Function Invoke-StreamingWebRequest($Uri, $MAC, $Nonce) {
 	$request.Headers["X-MC-MAC"] = $MAC
 	$request.Headers["X-MC-Nonce"] = $Nonce
 	$request.Timeout = 10800000
+	$request.ReadWriteTimeout = 10800000
 
 	$response = $request.GetResponse()
 	$responseStream = $response.GetResponseStream()
